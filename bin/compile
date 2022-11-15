@@ -17,11 +17,5 @@ echo 'django_buildpack starting...'
 echo 'exporting env vars...'
 export_env_dir()
 ls /app/bin
-echo 'migrating...'
-python manage.py migrate
-echo 'starting celery scripts...'
-echo 'borders...'
-celery -A counrties_plus.celery worker -B
-echo 'partner reminder...'
-celery -A listing.celery worker -B
+
 echo 'django_buildpack finishing...'
